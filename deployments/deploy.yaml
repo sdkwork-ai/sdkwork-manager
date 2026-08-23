@@ -1,6 +1,5 @@
 version: 2
 defaultProfile: cloud.production
-
 profiles:
   cloud.test:
     deployment:
@@ -21,13 +20,32 @@ profiles:
         tls: sdkwork.com
         mode: web
         web: pc
+      - domain: admin-test.birdcoder.com
+        tls: birdcoder.com
+        mode: web
+        web: pc
+      - domain: admin-test.dtupay.com
+        tls: dtupay.com
+        mode: web
+        web: pc
+      - domain: admin-test.sdkwork.cn
+        tls: sdkwork.cn
+        mode: web
+        web: pc
+      - domain: admin-test.birdcoder.cn
+        tls: birdcoder.cn
+        mode: web
+        web: pc
+      - domain: admin-test.dtupay.cn
+        tls: dtupay.cn
+        mode: web
+        web: pc
     packages: []
     overrides:
       topology:
         spec: specs/topology.spec.json
         profile: cloud.test
         env: etc/topology/cloud.test.env
-
   cloud.staging:
     deployment:
       deploymentProfile: cloud
@@ -47,13 +65,32 @@ profiles:
         tls: sdkwork.com
         mode: web
         web: pc
+      - domain: admin-staging.birdcoder.com
+        tls: birdcoder.com
+        mode: web
+        web: pc
+      - domain: admin-staging.dtupay.com
+        tls: dtupay.com
+        mode: web
+        web: pc
+      - domain: admin-staging.sdkwork.cn
+        tls: sdkwork.cn
+        mode: web
+        web: pc
+      - domain: admin-staging.birdcoder.cn
+        tls: birdcoder.cn
+        mode: web
+        web: pc
+      - domain: admin-staging.dtupay.cn
+        tls: dtupay.cn
+        mode: web
+        web: pc
     packages: []
     overrides:
       topology:
         spec: specs/topology.spec.json
         profile: cloud.staging
         env: etc/topology/cloud.staging.env
-
   cloud.production:
     deployment:
       deploymentProfile: cloud
@@ -73,13 +110,32 @@ profiles:
         tls: sdkwork.com
         mode: web
         web: pc
+      - domain: admin.birdcoder.com
+        tls: birdcoder.com
+        mode: web
+        web: pc
+      - domain: admin.dtupay.com
+        tls: dtupay.com
+        mode: web
+        web: pc
+      - domain: admin.sdkwork.cn
+        tls: sdkwork.cn
+        mode: web
+        web: pc
+      - domain: admin.birdcoder.cn
+        tls: birdcoder.cn
+        mode: web
+        web: pc
+      - domain: admin.dtupay.cn
+        tls: dtupay.cn
+        mode: web
+        web: pc
     packages: []
     overrides:
       topology:
         spec: specs/topology.spec.json
         profile: cloud.production
         env: etc/topology/cloud.production.env
-
   standalone.production:
     deployment:
       deploymentProfile: standalone
@@ -94,6 +150,30 @@ profiles:
       availabilityMode: single-instance
     install:
       layout: binary-package
-    expose: []
+    expose:
+      - tls: sdkwork.com
+        mode: web
+        web: adaptive
+        domain: admin.sdkwork.com
+      - tls: birdcoder.com
+        mode: web
+        web: adaptive
+        domain: admin.birdcoder.com
+      - tls: dtupay.com
+        mode: web
+        web: adaptive
+        domain: admin.dtupay.com
+      - tls: sdkwork.cn
+        mode: web
+        web: adaptive
+        domain: admin.sdkwork.cn
+      - tls: birdcoder.cn
+        mode: web
+        web: adaptive
+        domain: admin.birdcoder.cn
+      - tls: dtupay.cn
+        mode: web
+        web: adaptive
+        domain: admin.dtupay.cn
     packages: []
     overrides: {}
