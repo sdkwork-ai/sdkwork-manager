@@ -40,6 +40,38 @@ profiles:
         tls: dtupay.cn
         mode: web
         web: pc
+      - domain: admin-test.skubc.com
+        tls: skubc.com
+        mode: web
+        web: pc
+      - domain: admin-test.skubc.cn
+        tls: skubc.cn
+        mode: web
+        web: pc
+      - domain: admin-test.zowalk.com
+        tls: zowalk.com
+        mode: web
+        web: pc
+      - domain: admin-test.zowalk.cn
+        tls: zowalk.cn
+        mode: web
+        web: pc
+      - domain: admin-test.offer86.com
+        tls: offer86.com
+        mode: web
+        web: pc
+      - domain: admin-test.offer86.cn
+        tls: offer86.cn
+        mode: web
+        web: pc
+      - domain: admin-test.86offer.com
+        tls: 86offer.com
+        mode: web
+        web: pc
+      - domain: admin-test.86offer.cn
+        tls: 86offer.cn
+        mode: web
+        web: pc
     packages: []
     overrides:
       topology:
@@ -83,6 +115,38 @@ profiles:
         web: pc
       - domain: admin-staging.dtupay.cn
         tls: dtupay.cn
+        mode: web
+        web: pc
+      - domain: admin-staging.skubc.com
+        tls: skubc.com
+        mode: web
+        web: pc
+      - domain: admin-staging.skubc.cn
+        tls: skubc.cn
+        mode: web
+        web: pc
+      - domain: admin-staging.zowalk.com
+        tls: zowalk.com
+        mode: web
+        web: pc
+      - domain: admin-staging.zowalk.cn
+        tls: zowalk.cn
+        mode: web
+        web: pc
+      - domain: admin-staging.offer86.com
+        tls: offer86.com
+        mode: web
+        web: pc
+      - domain: admin-staging.offer86.cn
+        tls: offer86.cn
+        mode: web
+        web: pc
+      - domain: admin-staging.86offer.com
+        tls: 86offer.com
+        mode: web
+        web: pc
+      - domain: admin-staging.86offer.cn
+        tls: 86offer.cn
         mode: web
         web: pc
     packages: []
@@ -130,6 +194,38 @@ profiles:
         tls: dtupay.cn
         mode: web
         web: pc
+      - domain: admin.skubc.com
+        tls: skubc.com
+        mode: web
+        web: pc
+      - domain: admin.skubc.cn
+        tls: skubc.cn
+        mode: web
+        web: pc
+      - domain: admin.zowalk.com
+        tls: zowalk.com
+        mode: web
+        web: pc
+      - domain: admin.zowalk.cn
+        tls: zowalk.cn
+        mode: web
+        web: pc
+      - domain: admin.offer86.com
+        tls: offer86.com
+        mode: web
+        web: pc
+      - domain: admin.offer86.cn
+        tls: offer86.cn
+        mode: web
+        web: pc
+      - domain: admin.86offer.com
+        tls: 86offer.com
+        mode: web
+        web: pc
+      - domain: admin.86offer.cn
+        tls: 86offer.cn
+        mode: web
+        web: pc
     packages: []
     overrides:
       topology:
@@ -175,5 +271,37 @@ profiles:
         mode: web
         web: adaptive
         domain: admin.dtupay.cn
+      - tls: skubc.com
+        mode: web
+        web: adaptive
+        domain: admin.skubc.com
+      - tls: skubc.cn
+        mode: web
+        web: adaptive
+        domain: admin.skubc.cn
+      - tls: zowalk.com
+        mode: web
+        web: adaptive
+        domain: admin.zowalk.com
+      - tls: zowalk.cn
+        mode: web
+        web: adaptive
+        domain: admin.zowalk.cn
+      - tls: offer86.com
+        mode: web
+        web: adaptive
+        domain: admin.offer86.com
+      - tls: offer86.cn
+        mode: web
+        web: adaptive
+        domain: admin.offer86.cn
+      - tls: 86offer.com
+        mode: web
+        web: adaptive
+        domain: admin.86offer.com
+      - tls: 86offer.cn
+        mode: web
+        web: adaptive
+        domain: admin.86offer.cn
     packages: []
     overrides: {}

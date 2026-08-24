@@ -97,7 +97,12 @@
     "_sdkwork:deploy:rollback:standalone": "pnpm exec sdkwork-app deploy:rollback --profile standalone.production --environment production",
     "_sdkwork:deploy:rollback:cloud": "pnpm exec sdkwork-app deploy:rollback --profile cloud.production --environment production",
     "_sdkwork:deploy:validate:standalone": "pnpm exec sdkwork-app deploy:validate --profile standalone.production",
-    "_sdkwork:deploy:validate:cloud": "pnpm exec sdkwork-app deploy:validate --profile cloud.production"
+    "_sdkwork:deploy:validate:cloud": "pnpm exec sdkwork-app deploy:validate --profile cloud.production",
+    "build:pc:dev": "node ../sdkwork-specs/tools/build-browser-client.mjs --root . --architecture pc --environment dev",
+    "build:pc:test": "node ../sdkwork-specs/tools/build-browser-client.mjs --root . --architecture pc --environment test",
+    "build:pc:staging": "node ../sdkwork-specs/tools/build-browser-client.mjs --root . --architecture pc --environment staging",
+    "build:pc:prod": "node ../sdkwork-specs/tools/build-browser-client.mjs --root . --architecture pc --environment prod",
+    "check:browser-build-scripts": "node ../sdkwork-specs/tools/check-browser-build-scripts.mjs --root ."
   },
   "devDependencies": {
     "@sdkwork/iam-application-bootstrap": "workspace:*",
