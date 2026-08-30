@@ -23,7 +23,7 @@
   "paths": {
     "/backend/v3/api/manager/preferences": {
       "get": {
-        "operationId": "manager.preferences.admin.list",
+        "operationId": "preferences.admin.list",
         "summary": "List manager preferences for tenant administration",
         "tags": [
           "manager"
@@ -115,12 +115,13 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/backend/v3/api/manager/commercial_entitlements/current": {
       "get": {
-        "operationId": "manager.commercialEntitlements.current.retrieve",
+        "operationId": "commercialEntitlements.current.retrieve",
         "summary": "Retrieve the current tenant application commercial entitlement snapshot",
         "tags": [
           "manager"
@@ -175,10 +176,11 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       },
       "put": {
-        "operationId": "manager.commercialEntitlements.current.update",
+        "operationId": "commercialEntitlements.current.update",
         "summary": "Replace the current tenant application commercial entitlement snapshot",
         "tags": [
           "manager"
@@ -263,12 +265,13 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/backend/v3/api/manager/commercial_entitlements/verify": {
       "post": {
-        "operationId": "manager.commercialEntitlements.verify",
+        "operationId": "commercialEntitlements.verify",
         "summary": "Evaluate one tenant application commercial entitlement",
         "description": "Server-side enforcement endpoint for trusted gateway and business-service identities.",
         "tags": [
@@ -344,7 +347,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     }
   },

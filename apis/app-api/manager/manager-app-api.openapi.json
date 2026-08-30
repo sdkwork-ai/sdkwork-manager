@@ -23,7 +23,7 @@
   "paths": {
     "/app/v3/api/manager/preferences": {
       "get": {
-        "operationId": "manager.preferences.retrieve",
+        "operationId": "preferences.retrieve",
         "summary": "Retrieve current user manager preferences",
         "tags": [
           "manager"
@@ -105,10 +105,11 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       },
       "put": {
-        "operationId": "manager.preferences.update",
+        "operationId": "preferences.update",
         "summary": "Update current user manager preferences",
         "tags": [
           "manager"
@@ -188,7 +189,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     }
   },

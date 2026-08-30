@@ -23,7 +23,7 @@
   "paths": {
     "/backend/v3/api/manager/preferences": {
       "get": {
-        "operationId": "manager.preferences.admin.list",
+        "operationId": "preferences.admin.list",
         "summary": "List manager preferences for tenant administration",
         "tags": [
           "manager"
@@ -115,54 +115,92 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/backend/v3/api/manager/commercial_entitlements/current": {
       "get": {
-        "operationId": "manager.commercialEntitlements.current.retrieve",
+        "operationId": "commercialEntitlements.current.retrieve",
         "summary": "Retrieve the current tenant application commercial entitlement snapshot",
-        "tags": ["manager"],
+        "tags": [
+          "manager"
+        ],
         "x-sdkwork-api-surface": "backend-api",
         "x-sdkwork-request-context": "WebRequestContext",
         "x-sdkwork-permission": "manager.entitlements.read",
-        "security": [{ "AuthToken": [], "AccessToken": [] }],
+        "security": [
+          {
+            "AuthToken": [],
+            "AccessToken": []
+          }
+        ],
         "responses": {
           "200": {
             "description": "Current tenant application commercial entitlement snapshot",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/CommercialEntitlementResponse" }
+                "schema": {
+                  "$ref": "#/components/schemas/CommercialEntitlementResponse"
+                }
               }
             }
           },
           "401": {
             "description": "Missing or invalid credentials",
-            "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetail" } } }
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            }
           },
           "403": {
             "description": "Missing commercial entitlement read permission",
-            "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetail" } } }
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            }
           },
           "500": {
             "description": "Unexpected server failure",
-            "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetail" } } }
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            }
           }
-        }
+        },
+        "parameters": []
       },
       "put": {
-        "operationId": "manager.commercialEntitlements.current.update",
+        "operationId": "commercialEntitlements.current.update",
         "summary": "Replace the current tenant application commercial entitlement snapshot",
-        "tags": ["manager"],
+        "tags": [
+          "manager"
+        ],
         "x-sdkwork-api-surface": "backend-api",
         "x-sdkwork-request-context": "WebRequestContext",
         "x-sdkwork-permission": "manager.entitlements.manage",
-        "security": [{ "AuthToken": [], "AccessToken": [] }],
+        "security": [
+          {
+            "AuthToken": [],
+            "AccessToken": []
+          }
+        ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/UpdateCommercialEntitlementRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCommercialEntitlementRequest"
+              }
             }
           }
         },
@@ -171,48 +209,90 @@
             "description": "Updated tenant application commercial entitlement snapshot",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/CommercialEntitlementResponse" }
+                "schema": {
+                  "$ref": "#/components/schemas/CommercialEntitlementResponse"
+                }
               }
             }
           },
           "400": {
             "description": "Invalid commercial entitlement input",
-            "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetail" } } }
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            }
           },
           "401": {
             "description": "Missing or invalid credentials",
-            "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetail" } } }
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            }
           },
           "403": {
             "description": "Missing commercial entitlement management permission",
-            "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetail" } } }
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            }
           },
           "409": {
             "description": "Commercial entitlement snapshot version conflict",
-            "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetail" } } }
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            }
           },
           "500": {
             "description": "Unexpected server failure",
-            "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetail" } } }
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/backend/v3/api/manager/commercial_entitlements/verify": {
       "post": {
-        "operationId": "manager.commercialEntitlements.verify",
+        "operationId": "commercialEntitlements.verify",
         "summary": "Evaluate one tenant application commercial entitlement",
         "description": "Server-side enforcement endpoint for trusted gateway and business-service identities.",
-        "tags": ["manager"],
+        "tags": [
+          "manager"
+        ],
         "x-sdkwork-api-surface": "backend-api",
         "x-sdkwork-request-context": "WebRequestContext",
         "x-sdkwork-permission": "manager.entitlements.enforce",
-        "security": [{ "AuthToken": [], "AccessToken": [] }],
+        "security": [
+          {
+            "AuthToken": [],
+            "AccessToken": []
+          }
+        ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/CommercialEntitlementDecisionRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/CommercialEntitlementDecisionRequest"
+              }
             }
           }
         },
@@ -221,27 +301,54 @@
             "description": "Commercial entitlement enforcement decision",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/CommercialEntitlementDecisionResponse" }
+                "schema": {
+                  "$ref": "#/components/schemas/CommercialEntitlementDecisionResponse"
+                }
               }
             }
           },
           "400": {
             "description": "Invalid entitlement key",
-            "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetail" } } }
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            }
           },
           "401": {
             "description": "Missing or invalid service credentials",
-            "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetail" } } }
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            }
           },
           "403": {
             "description": "Missing commercial entitlement enforcement permission",
-            "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetail" } } }
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            }
           },
           "500": {
             "description": "Unexpected server failure",
-            "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetail" } } }
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            }
           }
-        }
+        },
+        "parameters": []
       }
     }
   },
@@ -458,16 +565,32 @@
       },
       "CommercialEntitlementTier": {
         "type": "string",
-        "enum": ["foundation", "standard", "professional", "enterprise"]
+        "enum": [
+          "foundation",
+          "standard",
+          "professional",
+          "enterprise"
+        ]
       },
       "CommercialEntitlementStatus": {
         "type": "string",
-        "enum": ["active", "suspended", "expired"]
+        "enum": [
+          "active",
+          "suspended",
+          "expired"
+        ]
       },
       "CommercialEntitlementItem": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["appId", "entitlementKeys", "tier", "status", "version", "updatedAt"],
+        "required": [
+          "appId",
+          "entitlementKeys",
+          "tier",
+          "status",
+          "version",
+          "updatedAt"
+        ],
         "properties": {
           "appId": {
             "type": "string",
@@ -486,17 +609,39 @@
               "pattern": "^[A-Za-z0-9._-]+$"
             }
           },
-          "tier": { "$ref": "#/components/schemas/CommercialEntitlementTier" },
-          "status": { "$ref": "#/components/schemas/CommercialEntitlementStatus" },
-          "validUntil": { "type": ["string", "null"], "format": "date-time" },
-          "version": { "type": "string", "pattern": "^[0-9]+$" },
-          "updatedAt": { "type": "string", "format": "date-time" }
+          "tier": {
+            "$ref": "#/components/schemas/CommercialEntitlementTier"
+          },
+          "status": {
+            "$ref": "#/components/schemas/CommercialEntitlementStatus"
+          },
+          "validUntil": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^[0-9]+$"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
         }
       },
       "UpdateCommercialEntitlementRequest": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["appId", "entitlementKeys", "tier", "status", "expectedVersion"],
+        "required": [
+          "appId",
+          "entitlementKeys",
+          "tier",
+          "status",
+          "expectedVersion"
+        ],
         "properties": {
           "appId": {
             "type": "string",
@@ -515,16 +660,32 @@
               "pattern": "^[A-Za-z0-9._-]+$"
             }
           },
-          "tier": { "$ref": "#/components/schemas/CommercialEntitlementTier" },
-          "status": { "$ref": "#/components/schemas/CommercialEntitlementStatus" },
-          "validUntil": { "type": ["string", "null"], "format": "date-time" },
-          "expectedVersion": { "type": "string", "pattern": "^[0-9]+$" }
+          "tier": {
+            "$ref": "#/components/schemas/CommercialEntitlementTier"
+          },
+          "status": {
+            "$ref": "#/components/schemas/CommercialEntitlementStatus"
+          },
+          "validUntil": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "expectedVersion": {
+            "type": "string",
+            "pattern": "^[0-9]+$"
+          }
         }
       },
       "CommercialEntitlementDecisionRequest": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["appId", "entitlementKey"],
+        "required": [
+          "appId",
+          "entitlementKey"
+        ],
         "properties": {
           "appId": {
             "type": "string",
@@ -543,35 +704,83 @@
       "CommercialEntitlementDecisionItem": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["accepted", "allowed", "appId", "entitlementKey", "reason", "tier", "snapshotVersion", "status"],
+        "required": [
+          "accepted",
+          "allowed",
+          "appId",
+          "entitlementKey",
+          "reason",
+          "tier",
+          "snapshotVersion",
+          "status"
+        ],
         "properties": {
-          "accepted": { "type": "boolean", "const": true },
-          "allowed": { "type": "boolean" },
-          "appId": { "type": "string" },
-          "entitlementKey": { "type": "string" },
+          "accepted": {
+            "type": "boolean",
+            "const": true
+          },
+          "allowed": {
+            "type": "boolean"
+          },
+          "appId": {
+            "type": "string"
+          },
+          "entitlementKey": {
+            "type": "string"
+          },
           "reason": {
             "type": "string",
-            "enum": ["entitlement_active", "entitlement_missing", "snapshot_inactive", "snapshot_expired"]
+            "enum": [
+              "entitlement_active",
+              "entitlement_missing",
+              "snapshot_inactive",
+              "snapshot_expired"
+            ]
           },
-          "tier": { "$ref": "#/components/schemas/CommercialEntitlementTier" },
-          "snapshotVersion": { "type": "string", "pattern": "^[0-9]+$" },
-          "status": { "type": "string", "enum": ["allowed", "denied"] },
-          "validUntil": { "type": ["string", "null"], "format": "date-time" }
+          "tier": {
+            "$ref": "#/components/schemas/CommercialEntitlementTier"
+          },
+          "snapshotVersion": {
+            "type": "string",
+            "pattern": "^[0-9]+$"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "allowed",
+              "denied"
+            ]
+          },
+          "validUntil": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
         }
       },
       "CommercialEntitlementResponse": {
         "allOf": [
-          { "$ref": "#/components/schemas/SdkWorkApiResponse" },
+          {
+            "$ref": "#/components/schemas/SdkWorkApiResponse"
+          },
           {
             "type": "object",
-            "required": ["data"],
+            "required": [
+              "data"
+            ],
             "properties": {
               "data": {
                 "type": "object",
                 "additionalProperties": false,
-                "required": ["item"],
+                "required": [
+                  "item"
+                ],
                 "properties": {
-                  "item": { "$ref": "#/components/schemas/CommercialEntitlementItem" }
+                  "item": {
+                    "$ref": "#/components/schemas/CommercialEntitlementItem"
+                  }
                 }
               }
             }
@@ -580,12 +789,18 @@
       },
       "CommercialEntitlementDecisionResponse": {
         "allOf": [
-          { "$ref": "#/components/schemas/SdkWorkApiResponse" },
+          {
+            "$ref": "#/components/schemas/SdkWorkApiResponse"
+          },
           {
             "type": "object",
-            "required": ["data"],
+            "required": [
+              "data"
+            ],
             "properties": {
-              "data": { "$ref": "#/components/schemas/CommercialEntitlementDecisionItem" }
+              "data": {
+                "$ref": "#/components/schemas/CommercialEntitlementDecisionItem"
+              }
             }
           }
         ]

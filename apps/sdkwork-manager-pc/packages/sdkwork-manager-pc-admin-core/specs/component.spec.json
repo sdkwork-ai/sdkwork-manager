@@ -9,7 +9,9 @@
     "domain": "platform",
     "capability": "admin-core",
     "surface": "backend-admin",
-    "languages": ["typescript"],
+    "languages": [
+      "typescript"
+    ],
     "generated": false
   },
   "canonicalSpecs": [
@@ -23,7 +25,14 @@
     }
   ],
   "contracts": {
-    "publicExports": [".", "./sdk", "./modules", "./host", "./session", "./composition"],
+    "publicExports": [
+      ".",
+      "./sdk",
+      "./modules",
+      "./host",
+      "./session",
+      "./composition"
+    ],
     "sdkDependencies": [
       {
         "workspace": "sdkwork-manager-backend-sdk",
@@ -78,42 +87,42 @@
     "permissionComposition": {
       "inheritanceMode": "module-catalog-with-overrides",
       "applicationModule": {
-        "manifestRef": "../../../../../specs/iam.module.manifest.json"
+        "manifestRef": "../../../../specs/iam.module.manifest.json"
       },
       "moduleCatalogRefs": [
         {
-          "moduleId": "iam-kernel",
-          "manifestRef": "../../../../../../sdkwork-iam/iam/modules/iam-kernel/iam.module.manifest.json",
-          "inheritPermissions": true,
-          "inheritRoles": false
-        },
-        {
-          "moduleId": "manager",
-          "manifestRef": "../../../../../specs/iam.module.manifest.json",
+          "moduleId": "account",
+          "manifestRef": "../../../../../sdkwork-account/specs/iam.module.manifest.json",
           "inheritPermissions": true,
           "inheritRoles": true
         },
         {
           "moduleId": "drive",
-          "manifestRef": "../../../../../../sdkwork-iam/iam/modules/drive/iam.module.manifest.json",
+          "manifestRef": "../../../../../sdkwork-iam/iam/modules/drive/iam.module.manifest.json",
           "inheritPermissions": true,
           "inheritRoles": false
+        },
+        {
+          "moduleId": "iam-kernel",
+          "manifestRef": "../../../../../sdkwork-iam/iam/modules/iam-kernel/iam.module.manifest.json",
+          "inheritPermissions": true,
+          "inheritRoles": false
+        },
+        {
+          "moduleId": "manager",
+          "manifestRef": "../../../../specs/iam.module.manifest.json",
+          "inheritPermissions": true,
+          "inheritRoles": true
         },
         {
           "moduleId": "payment",
-          "manifestRef": "../../../../../../sdkwork-payment/specs/iam.module.manifest.json",
-          "inheritPermissions": true,
-          "inheritRoles": false
-        },
-        {
-          "moduleId": "commerce",
-          "manifestRef": "../../../../../../sdkwork-iam/iam/modules/commerce/iam.module.manifest.json",
+          "manifestRef": "../../../../../sdkwork-payment/specs/iam.module.manifest.json",
           "inheritPermissions": true,
           "inheritRoles": false
         },
         {
           "moduleId": "promotion",
-          "manifestRef": "../../../../../../sdkwork-promotion/specs/iam.module.manifest.json",
+          "manifestRef": "../../../../../sdkwork-promotion/specs/iam.module.manifest.json",
           "inheritPermissions": true,
           "inheritRoles": false
         }
@@ -136,6 +145,8 @@
     }
   },
   "verification": {
-    "commands": ["pnpm --filter @sdkwork/manager-pc-admin-core typecheck"]
+    "commands": [
+      "pnpm --filter @sdkwork/manager-pc-admin-core typecheck"
+    ]
   }
 }

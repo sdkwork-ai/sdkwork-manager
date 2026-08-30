@@ -26,20 +26,14 @@
     "permissionComposition": {
       "inheritanceMode": "module-catalog-with-overrides",
       "applicationModule": {
-        "manifestRef": "../../../../../specs/iam.module.manifest.json"
+        "manifestRef": "../../../../specs/iam.module.manifest.json"
       },
       "moduleCatalogRefs": [
         {
           "moduleId": "iam-kernel",
-          "manifestRef": "../../../../../../sdkwork-iam/iam/modules/iam-kernel/iam.module.manifest.json",
+          "manifestRef": "../../../../../sdkwork-iam/iam/modules/iam-kernel/iam.module.manifest.json",
           "inheritPermissions": true,
           "inheritRoles": false
-        },
-        {
-          "moduleId": "manager",
-          "manifestRef": "../../../../../specs/iam.module.manifest.json",
-          "inheritPermissions": true,
-          "inheritRoles": true
         }
       ],
       "bootstrapAccessTokenScope": {
