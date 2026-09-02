@@ -3160,6 +3160,7 @@ dependencies = [
  "sdkwork-account-service",
  "sdkwork-contract-service",
  "sdkwork-database-id",
+ "sdkwork-database-sqlx",
  "sdkwork-utils-rust",
  "serde",
  "serde_json",
@@ -3407,7 +3408,6 @@ dependencies = [
  "serde_json",
  "sqlx",
  "thiserror 2.0.19",
- "tokio",
 ]
 
 [[package]]
@@ -3448,7 +3448,6 @@ dependencies = [
  "serde_json",
  "sqlx",
  "thiserror 2.0.19",
- "tokio",
  "tracing",
 ]
 

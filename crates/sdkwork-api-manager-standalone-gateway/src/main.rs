@@ -5,7 +5,7 @@ use sdkwork_iam_web_adapter::{
     build_web_framework_builder, iam_web_request_context_resolver_from_database_pool_for_audiences,
     iam_web_request_context_resolver_from_env, IamAuditEmitter, IamSecurityEventEmitter,
 };
-use sdkwork_web_bootstrap::{infra_public_path_prefixes, ComposedApiAssembly};
+use sdkwork_web_bootstrap::{ApiModuleRegistry, ComposedApiAssembly, infra_public_path_prefixes};
 
 const APPLICATION_ID: &str = "sdkwork-manager";
 
@@ -56,7 +56,10 @@ async fn host_gateway() -> Result<(), Box<dyn std::error::Error + Send + Sync>> 
         payment,
         membership,
     ];
-    let composed = ComposedApiAssembly::try_compose("SDKWork Manager API", contributions)?;
+    let mut module_registry = ApiModuleRegistry::new();
+    module_registry.add_modules(contributions);
+    let composed = module_registry
+        .try_compose("SDKWork Manager API")?;
     let environment = std::env::var("SDKWORK_ENVIRONMENT")
         .or_else(|_| std::env::var("SDKWORK_MANAGER_ENVIRONMENT"))
         .unwrap_or_else(|_| "development".to_owned());
