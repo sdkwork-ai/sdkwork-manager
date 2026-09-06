@@ -28,6 +28,10 @@ profiles:
         tls: dtupay.com
         mode: web
         web: pc
+      - domain: admin-test.noaper.com
+        tls: noaper.com
+        mode: web
+        web: pc
       - domain: admin-test.sdkwork.cn
         tls: sdkwork.cn
         mode: web
@@ -38,6 +42,10 @@ profiles:
         web: pc
       - domain: admin-test.dtupay.cn
         tls: dtupay.cn
+        mode: web
+        web: pc
+      - domain: admin-test.noaper.cn
+        tls: noaper.cn
         mode: web
         web: pc
       - domain: admin-test.skubc.com
@@ -105,6 +113,10 @@ profiles:
         tls: dtupay.com
         mode: web
         web: pc
+      - domain: admin-staging.noaper.com
+        tls: noaper.com
+        mode: web
+        web: pc
       - domain: admin-staging.sdkwork.cn
         tls: sdkwork.cn
         mode: web
@@ -115,6 +127,10 @@ profiles:
         web: pc
       - domain: admin-staging.dtupay.cn
         tls: dtupay.cn
+        mode: web
+        web: pc
+      - domain: admin-staging.noaper.cn
+        tls: noaper.cn
         mode: web
         web: pc
       - domain: admin-staging.skubc.com
@@ -182,6 +198,10 @@ profiles:
         tls: dtupay.com
         mode: web
         web: pc
+      - domain: admin.noaper.com
+        tls: noaper.com
+        mode: web
+        web: pc
       - domain: admin.sdkwork.cn
         tls: sdkwork.cn
         mode: web
@@ -192,6 +212,10 @@ profiles:
         web: pc
       - domain: admin.dtupay.cn
         tls: dtupay.cn
+        mode: web
+        web: pc
+      - domain: admin.noaper.cn
+        tls: noaper.cn
         mode: web
         web: pc
       - domain: admin.skubc.com
@@ -259,6 +283,10 @@ profiles:
         mode: web
         web: adaptive
         domain: admin.dtupay.com
+      - tls: noaper.com
+        mode: web
+        web: adaptive
+        domain: admin.noaper.com
       - tls: sdkwork.cn
         mode: web
         web: adaptive
@@ -271,6 +299,10 @@ profiles:
         mode: web
         web: adaptive
         domain: admin.dtupay.cn
+      - tls: noaper.cn
+        mode: web
+        web: adaptive
+        domain: admin.noaper.cn
       - tls: skubc.com
         mode: web
         web: adaptive
