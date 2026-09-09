@@ -71,6 +71,34 @@ export function normalizeHttpSdkBaseUrl(
   }
 }
 
+/**
+ * ENVIRONMENT_SPEC §6.3 protocol adaptation: the serving edge terminates HTTP
+ * and HTTPS on the same API host, so a browser-resolved base origin MUST use
+ * the page scheme — an http:// page targets the http:// origin (a TLS-less dev
+ * edge closes https:// connections) and an https:// page targets https://
+ * (mixed-content blocks). Server/native runtimes keep the authored scheme.
+ */
+function alignBrowserBaseUrlPageProtocol(value: string): string {
+  if (typeof window === "undefined") {
+    return value;
+  }
+  try {
+    const parsedUrl = new URL(value);
+    const pageProtocol = window.location.protocol;
+    if (
+      (parsedUrl.protocol === "http:" || parsedUrl.protocol === "https:")
+      && (pageProtocol === "http:" || pageProtocol === "https:")
+      && parsedUrl.protocol !== pageProtocol
+    ) {
+      parsedUrl.protocol = pageProtocol;
+      return parsedUrl.toString().replace(/\/$/u, "");
+    }
+  } catch {
+    // Keep the raw value for the existing downstream validation path.
+  }
+  return value;
+}
+
 export function resolveManagerApplicationBaseUrl(
   explicit?: string,
   env: ClientRuntimeEnv = readRuntimeImportMetaEnv(),
@@ -93,17 +121,17 @@ export function resolveManagerApplicationBaseUrl(
     || !browserHostname
     || LOOPBACK_HOSTNAMES.has(browserHostname.toLowerCase())
   ) {
-    return normalizedCandidate;
+    return alignBrowserBaseUrlPageProtocol(normalizedCandidate);
   }
   try {
     const parsed = new URL(normalizedCandidate);
     if (!LOOPBACK_HOSTNAMES.has(parsed.hostname.toLowerCase())) {
-      return normalizedCandidate;
+      return alignBrowserBaseUrlPageProtocol(normalizedCandidate);
     }
     parsed.hostname = browserHostname;
-    return normalizeHttpSdkBaseUrl(parsed.toString());
+    return alignBrowserBaseUrlPageProtocol(normalizeHttpSdkBaseUrl(parsed.toString()));
   } catch {
-    return normalizedCandidate;
+    return alignBrowserBaseUrlPageProtocol(normalizedCandidate);
   }
 }
 
@@ -121,7 +149,7 @@ export function resolvePlatformApiGatewayBaseUrl(
   if (isBlank(candidate)) {
     return DEFAULT_LOCAL_PLATFORM_API_GATEWAY_HTTP_URL;
   }
-  return normalizeHttpSdkBaseUrl(candidate.replace(/\/+$/u, ""));
+  return alignBrowserBaseUrlPageProtocol(normalizeHttpSdkBaseUrl(candidate.replace(/\/+$/u, "")));
 }
 
 function resolveManagerIamBaseUrl(
