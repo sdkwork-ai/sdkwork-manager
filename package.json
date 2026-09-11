@@ -8,6 +8,7 @@
   "scripts": {
     "workflow:materialize-client-env": "node ../sdkwork-specs/tools/materialize-client-env.mjs --root .",
     "check:client-env": "node ../sdkwork-specs/tools/materialize-client-env.mjs --root . --check",
+    "check:cors-standard": "node ../sdkwork-specs/tools/check-cors-standard.mjs --root .",
     "stop": "pnpm exec sdkwork-app stop",
     "dev": "pnpm dev:standalone",
     "build": "pnpm exec sdkwork-app build",
@@ -78,7 +79,7 @@
     "_sdkwork:build": "pnpm --dir apps/sdkwork-manager-pc build",
     "_sdkwork:test": "pnpm test:node && pnpm test:vitest && cargo test --workspace",
     "_sdkwork:check": "pnpm run check:governance && pnpm run check:app-composition && pnpm api:envelope:check && pnpm api:check && pnpm api:check:route-manifest && pnpm sdk:check && pnpm db:validate && pnpm db:pool:validate && pnpm typecheck",
-    "_sdkwork:verify": "pnpm check && pnpm test:node && pnpm test:vitest && pnpm deploy:validate && pnpm topology:validate && pnpm build && pnpm api:assembly:validate && pnpm format:check && cargo clippy --workspace --tests -- -D warnings && cargo test --workspace",
+    "_sdkwork:verify": "pnpm check && pnpm test:node && pnpm test:vitest && pnpm deploy:validate && pnpm topology:validate && pnpm build && pnpm api:assembly:validate && pnpm format:check && cargo clippy --workspace --tests -- -D warnings && cargo test --workspace && pnpm check:cors-standard",
     "_sdkwork:clean": "node -e \"console.log('Remove target/, node_modules/, dist/ manually or via CI cache reset')\"",
     "_sdkwork:gateway:standalone": "node scripts/dev/manager-start.mjs",
     "_sdkwork:client:browser": "node scripts/dev/manager-dev.mjs",
