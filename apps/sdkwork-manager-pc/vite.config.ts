@@ -65,7 +65,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       createSdkworkCredentialEntryBootstrapVitePlugin({
         accessToken: credentialEntryBootstrapAccessToken,
-        environment: mode,
+        environment: resolveViteEnvironment(mode, process.env),
       }),
       react(),
       tailwindcss(),
