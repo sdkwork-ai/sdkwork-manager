@@ -10,7 +10,7 @@ Use `../../../sdkwork-specs/README.md` as the task router, `../../../sdkwork-spe
 
 ## Application Identity
 
-Read `sdkwork.app.config.json` for the PC surface identity, capabilities, SDK wiring, and release metadata. Read `etc/` for PC runtime source configuration.
+Read `agent.app.config.json` for the PC surface identity, capabilities, SDK wiring, and release metadata. Read `etc/` for PC runtime source configuration.
 
 ## Local Dictionary Structure
 
@@ -18,7 +18,7 @@ Read `sdkwork.app.config.json` for the PC surface identity, capabilities, SDK wi
 - `packages/`: authored PC shell, core, and admin capability packages; each package owns its nearest `specs/component.spec.json`.
 - `specs/component.spec.json`: PC application contract.
 - `etc/`: PC deployable source configuration.
-- `sdkwork.app.config.json`: PC surface manifest.
+- `agent.app.config.json`: PC surface manifest.
 
 ## Spec Resolution Order
 

@@ -151,8 +151,8 @@ test("WSL PostgreSQL proxy lifecycle is declared through the topology framework"
 
 test("Manager manifests use the PC runtime app id required by IAM login", () => {
   for (const manifestPath of [
-    "sdkwork.app.config.json",
-    "apps/sdkwork-manager-pc/sdkwork.app.config.json",
+    "agent.app.config.json",
+    "apps/sdkwork-manager-pc/agent.app.config.json",
   ]) {
     const manifest = JSON.parse(readFileSync(path.join(root, manifestPath), "utf8"));
     assert.equal(manifest.backend.appId, "sdkwork-manager-pc");

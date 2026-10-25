@@ -8,7 +8,7 @@ import process from "node:process";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const appManifest = JSON.parse(readFileSync(path.join(repoRoot, "sdkwork.app.config.json"), "utf8"));
+const appManifest = JSON.parse(readFileSync(path.join(repoRoot, "agent.app.config.json"), "utf8"));
 const version = process.env.SDKWORK_PACKAGE_VERSION
   || appManifest.release?.currentVersion
   || appManifest.release?.version

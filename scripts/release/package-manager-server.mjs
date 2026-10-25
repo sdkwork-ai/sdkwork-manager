@@ -35,7 +35,7 @@ function requirePath(filePath, instruction) {
 function copyReleaseInputs(stageRoot, binaryPath) {
   const webRoot = path.join(repoRoot, "apps", "sdkwork-manager-pc", "dist");
   const productionProfile = path.join(repoRoot, "etc", "deployments", "standalone.production.env");
-  const appManifest = path.join(repoRoot, "sdkwork.app.config.json");
+  const appManifest = path.join(repoRoot, "agent.app.config.json");
   const topology = path.join(repoRoot, "specs", "topology.spec.json");
   requirePath(binaryPath, "run cargo build --release -p sdkwork-api-manager-standalone-gateway --bin manager-server");
   requirePath(path.join(webRoot, "index.html"), "run pnpm build");
@@ -45,7 +45,7 @@ function copyReleaseInputs(stageRoot, binaryPath) {
   cpSync(binaryPath, path.join(stageRoot, "bin", "manager-server"));
   cpSync(webRoot, path.join(stageRoot, "web", "pc"), { recursive: true });
   cpSync(productionProfile, path.join(stageRoot, "etc", "standalone.production.env"));
-  cpSync(appManifest, path.join(stageRoot, "etc", "sdkwork.app.config.json"));
+  cpSync(appManifest, path.join(stageRoot, "etc", "agent.app.config.json"));
   cpSync(topology, path.join(stageRoot, "etc", "topology.spec.json"));
   cpSync(
     path.join(repoRoot, "docs", "runbooks", "LAUNCH_READINESS.md"),

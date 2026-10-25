@@ -185,7 +185,7 @@ manifest. Supply backend bootstrap credentials through the approved IAM
 operator environment, never through a tracked env file:
 
 ```bash
-pnpm admin:bootstrap:app -- --config sdkwork.app.config.json --domain admin.sdkwork.com
+pnpm admin:bootstrap:app -- --config agent.app.config.json --domain admin.sdkwork.com
 ```
 
 Note: workspace default runner path targets `sdkwork-appbase`; use `--appbase-root sdkwork-iam` until the workspace bootstrap entry is repointed.

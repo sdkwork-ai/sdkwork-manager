@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "kind": "sdkwork.app",
+  "kind": "agent.app",
   "app": {
     "key": "sdkwork-manager-pc",
     "name": "SDKWork Manager PC",

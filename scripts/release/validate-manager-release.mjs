@@ -65,7 +65,7 @@ for (const required of [
   "bin/manager-server",
   "web/pc/index.html",
   "etc/standalone.production.env",
-  "etc/sdkwork.app.config.json",
+  "etc/agent.app.config.json",
   "etc/topology.spec.json",
   "docs/LAUNCH_READINESS.md",
 ]) {

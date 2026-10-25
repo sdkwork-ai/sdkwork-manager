@@ -49,7 +49,7 @@ async function main() {
   const profileEnv = resolveManagerRuntimeEnv();
   const runtimeEnv = mergeRepoDevBootstrapAccessTokenEnv({
     env: profileEnv,
-    manifestPath: "apps/sdkwork-manager-pc/sdkwork.app.config.json",
+    manifestPath: "apps/sdkwork-manager-pc/agent.app.config.json",
     repoRoot: workspaceRoot,
   });
   const { host, port } = parseClientBind(runtimeEnv.SDKWORK_MANAGER_PC_DEV_BIND);

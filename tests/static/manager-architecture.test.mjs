@@ -91,7 +91,7 @@ test("Manager Vite uses the IAM development credential-entry bootstrap only outs
   assert.equal(appPackage.scripts.dev, "pnpm dev:standalone");
   assert.match(appPackage.scripts["dev:standalone"], /sdkwork-app dev/);
   assert.match(devRunner, /mergeRepoDevBootstrapAccessTokenEnv/);
-  assert.match(devRunner, /apps\/sdkwork-manager-pc\/sdkwork\.app\.config\.json/);
+  assert.match(devRunner, /apps\/sdkwork-manager-pc\/agent\.app\.config\.json/);
   assert.match(devRunner, /@sdkwork\/app-topology\/network-access/);
   assert.match(devRunner, /waitForClient/);
   assert.match(devRunner, /application started successfully/);
@@ -218,7 +218,7 @@ test("Manager browser has no Vite API proxy and IAM SDKs use application ingress
     "utf8",
   );
   const manifest = JSON.parse(readFileSync(
-    path.join(root, "apps/sdkwork-manager-pc/sdkwork.app.config.json"),
+    path.join(root, "apps/sdkwork-manager-pc/agent.app.config.json"),
     "utf8",
   ));
   const component = JSON.parse(readFileSync(
@@ -249,8 +249,8 @@ test("Manager browser has no Vite API proxy and IAM SDKs use application ingress
 
 test("Manager default IAM grants exclude payment development operations", () => {
   for (const manifestPath of [
-    "sdkwork.app.config.json",
-    "apps/sdkwork-manager-pc/sdkwork.app.config.json",
+    "agent.app.config.json",
+    "apps/sdkwork-manager-pc/agent.app.config.json",
   ]) {
     const manifest = JSON.parse(readFileSync(path.join(root, manifestPath), "utf8"));
     const permissions = manifest.backend.accessTokenPermissionScope;

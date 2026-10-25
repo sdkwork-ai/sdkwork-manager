@@ -27,8 +27,8 @@ const requiredAccessControlPermissions = [
 describe("manager IAM foundation", () => {
   it("keeps repository and PC manifests aligned for user administration", () => {
     const manifests = [
-      resolve(process.cwd(), "sdkwork.app.config.json"),
-      resolve(process.cwd(), "apps/sdkwork-manager-pc/sdkwork.app.config.json"),
+      resolve(process.cwd(), "agent.app.config.json"),
+      resolve(process.cwd(), "apps/sdkwork-manager-pc/agent.app.config.json"),
     ].map((file) => JSON.parse(readFileSync(file, "utf8")) as {
       backend: { accessTokenPermissionScope: string[] };
     });

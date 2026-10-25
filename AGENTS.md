@@ -12,13 +12,13 @@ Use `../sdkwork-specs/README.md` as the task router and `../sdkwork-specs/AGENTS
 
 ## Application Identity
 
-Read `sdkwork.app.config.json` and `apps/sdkwork-manager-pc/sdkwork.app.config.json` when changing application identity, behavior, SDK wiring, owned capabilities, or release metadata. Read `etc/` for runtime URLs, binds, topology, profiles, and deployable source configuration; application manifests are not runtime configuration authority.
+Read `agent.app.config.json` and `apps/sdkwork-manager-pc/agent.app.config.json` when changing application identity, behavior, SDK wiring, owned capabilities, or release metadata. Read `etc/` for runtime URLs, binds, topology, profiles, and deployable source configuration; application manifests are not runtime configuration authority.
 
 ## Local Dictionary Structure
 
 - `AGENTS.md`: repository agent entrypoint and task router.
 - `.sdkwork/`: local skills, plugins, manifests, and AI workspace metadata.
-- `sdkwork.app.config.json`: repository application identity and release manifest.
+- `agent.app.config.json`: repository application identity and release manifest.
 - `apps/sdkwork-manager-pc/`: PC browser/desktop manager application root.
 - `apps/sdkwork-manager-common/packages/`: shared TypeScript contracts, client core, and service normalization.
 - `specs/`: repository-wide machine contracts; authored modules own their nearest `specs/component.spec.json`.
