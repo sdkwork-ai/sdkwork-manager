@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
 test("Manager workflow packages the standalone server instead of skipping it", () => {
-  const workflow = JSON.parse(readFileSync(path.join(root, "sdkwork.workflow.json"), "utf8"));
+  const workflow = JSON.parse(readFileSync(path.join(root, "agent.workflow.json"), "utf8"));
   const rootPackage = JSON.parse(readFileSync(path.join(root, "package.json"), "utf8"));
   const lifecycleRunner = readFileSync(
     path.join(root, "scripts/release/manager-release-lifecycle.mjs"),
@@ -44,7 +44,7 @@ test("Manager release scripts require binary, web, config, checksum, and SBOM ev
 });
 
 test("Manager cloud browser target generates and validates its own SBOM evidence", () => {
-  const workflow = JSON.parse(readFileSync(path.join(root, "sdkwork.workflow.json"), "utf8"));
+  const workflow = JSON.parse(readFileSync(path.join(root, "agent.workflow.json"), "utf8"));
   const sbomScript = workflow.lifecycle.sbom.map((step) => step.run).join("\n");
   const validateScript = workflow.lifecycle.validate.map((step) => step.run).join("\n");
   const cloudTarget = workflow.targets.find(
