@@ -15,7 +15,7 @@ pnpm start    # Rust gateway :18092
 pnpm dev      # PC Vite dev server :5190
 ```
 
-Environment template: `apps/sdkwork-manager-pc/.env.development`
+Environment template: `apps/sdkwork-manager-pc/.env.standalone.development`
 
 ## Verification
 

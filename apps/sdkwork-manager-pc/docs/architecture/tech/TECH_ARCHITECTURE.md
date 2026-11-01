@@ -76,8 +76,10 @@ endpoints only; no access token is embedded through Vite defines. Production bui
 resolve workspace SDK packages through `apps/sdkwork-manager-pc/vite.config.ts`
 aliases aligned with `tsconfig.base.json`. The same configuration forces a
 single React/ReactDOM/i18n runtime for all sibling workspace sources. Tracked
-templates are `.env.example`, `.env.development.example`, and
-`.env.production.example`; local `.env.*` files remain ignored.
+templates are `.env.example`, `.env.standalone.development.example`, and
+`.env.standalone.production.example`; private `.env.*` values live in the user
+credential bundle and no materialized `.env.<profile>.<environment>` file carries
+a secret.
 
 ## 6. Verification
 

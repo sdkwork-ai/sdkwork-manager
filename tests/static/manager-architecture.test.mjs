@@ -80,11 +80,11 @@ test("Manager Vite uses the IAM development credential-entry bootstrap only outs
     "utf8",
   );
   const developmentEnvTemplate = readFileSync(
-    path.join(root, "apps/sdkwork-manager-pc/.env.development.example"),
+    path.join(root, "apps/sdkwork-manager-pc/.env.standalone.development.example"),
     "utf8",
   );
   const productionEnvTemplate = readFileSync(
-    path.join(root, "apps/sdkwork-manager-pc/.env.production.example"),
+    path.join(root, "apps/sdkwork-manager-pc/.env.standalone.production.example"),
     "utf8",
   );
 

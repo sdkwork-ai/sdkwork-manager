@@ -9,8 +9,8 @@ profile and `pnpm check:client-env` to verify the tracked PC env projections.
 Local `.env` files and process environment variables may override these values. Secrets and access
 tokens must not be committed under `etc/`. Validate the topology with `pnpm topology:validate`.
 
-For standalone server development, copy the repository-root `.env.postgres.example` to the ignored
-`.env.postgres` overlay. The Manager IAM bootstrap loads that file before database lifecycle setup,
+For standalone server development, copy the repository-root `config/host/postgres.env.example` to the ignored
+`config/host/postgres.env` overlay. The Manager IAM bootstrap loads that file before database lifecycle setup,
 materializes the unified PostgreSQL URL and schema search path, and then exposes the same profile to
 the embedded Manager services. On Windows with PostgreSQL running in WSL, use the WSL-forwarded
 `127.0.0.1:5432` endpoint unless the local WSL networking configuration requires an explicit address.
@@ -20,8 +20,8 @@ starts, so run `pnpm start` or `pnpm dev` from an elevated terminal. Override
 `SDKWORK_MANAGER_WSL_POSTGRES_PORTPROXY_ENABLED=false` when PostgreSQL runs natively on Windows.
 
 The repository-root overlay takes precedence over the legacy sibling `sdkwork-cloudrouter` fallback.
-Keep database credentials in `.env.postgres` or protected process environment variables; keep only
-development placeholders in `.env.postgres.example`.
+Keep database credentials in `config/host/postgres.env` or protected process environment variables; keep only
+development placeholders in `config/host/postgres.env.example`.
 
 Payment database initialization is owned by `sdkwork-payment`. Both Manager development profiles
 enable its idempotent `development` seed during gateway assembly so the payment admin workspace has

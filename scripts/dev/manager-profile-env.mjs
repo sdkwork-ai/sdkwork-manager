@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const workspaceRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const deploymentIndexPath = path.join(workspaceRoot, "etc", "sdkwork.deployment.config.json");
-const localPostgresEnvPath = path.join(workspaceRoot, ".env.postgres");
+const localPostgresEnvPath = path.join(workspaceRoot, "config/host/postgres.env");
 
 function parseEnvFile(filePath) {
   return Object.fromEntries(
