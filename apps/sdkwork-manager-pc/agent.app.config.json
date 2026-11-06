@@ -110,7 +110,9 @@
       "commerce.payments.webhook_events.replay",
       "commerce.payments.reconciliation_runs.read",
       "commerce.payments.reconciliation_runs.create"
-    ]
+    ],
+    "tenantId": "100001",
+    "organizationId": "0"
   },
   "runtime": {
     "family": "web",
