@@ -136,7 +136,7 @@ flowchart LR
 | 用户 | `iam.users.read` | `iam.users.create` | `iam.users.update` | `iam.users.delete` | 已逐项控制 |
 | 租户 | `iam.tenants.read` | `iam.tenants.create` | `iam.tenants.update` | `iam.tenants.delete` | 已逐项控制 |
 | 租户成员 | `iam.tenant_members.read` | `iam.tenant_members.create` | `iam.tenant_members.update` | `iam.tenant_members.delete` | 已逐项控制 |
-| 租户应用 | 租户读取上下文 | `iam.tenant_applications.provision` | `iam.tenant_applications.update` | `iam.tenant_applications.enable` 控制启停 | 已逐项控制 |
+| 租户应用 | 租户读取上下文 | `iam.installations.provision` | `iam.installations.update` | `iam.installations.enable` 控制启停 | 已逐项控制 |
 | 组织 | `iam.organizations.read` | `iam.organizations.create` | `iam.organizations.update` | `iam.organizations.delete` | 已逐项控制 |
 | 部门 | `iam.departments.read` | `iam.departments.create` | `iam.departments.update` | `iam.departments.delete` | 已逐项控制 |
 | 组织成员 | `iam.memberships.read` | `iam.memberships.create` | `iam.memberships.update` | 后端未提供 | 仅展示真实能力 |
